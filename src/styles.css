@@ -87,6 +87,8 @@
   --beige: oklch(0.925 0.023 85);
   --bark: oklch(0.42 0.045 62);
   --whatsapp: oklch(0.62 0.16 145);
+  --hero-ivory: oklch(0.987 0.012 92);
+  --hero-sage: oklch(0.937 0.03 126);
 
   --shadow-soft: 0 2px 8px oklch(0.29 0.062 158 / 0.06), 0 12px 30px oklch(0.29 0.062 158 / 0.07);
   --shadow-lift: 0 10px 20px oklch(0.29 0.062 158 / 0.1), 0 30px 60px oklch(0.29 0.062 158 / 0.14);
@@ -149,6 +151,50 @@
   backdrop-filter: blur(18px) saturate(140%);
   border: 1px solid color-mix(in oklab, var(--gold) 28%, transparent);
   box-shadow: var(--shadow-soft);
+}
+
+@utility hero-nav {
+  background: color-mix(in oklab, var(--hero-ivory) 88%, transparent);
+  backdrop-filter: blur(20px) saturate(135%);
+  border: 1px solid color-mix(in oklab, var(--gold) 30%, transparent);
+  box-shadow: 0 8px 30px color-mix(in oklab, var(--emerald-deep) 10%, transparent);
+}
+
+@utility hero-light {
+  background:
+    linear-gradient(118deg, var(--hero-ivory) 0%, var(--hero-ivory) 43%, var(--hero-sage) 100%);
+}
+
+@utility hero-glow {
+  background: color-mix(in oklab, var(--gold-soft) 24%, transparent);
+  filter: blur(30px);
+}
+
+@utility hero-logo-shell {
+  background: color-mix(in oklab, var(--ivory) 90%, transparent);
+  border: 1px solid color-mix(in oklab, var(--gold) 48%, transparent);
+  box-shadow: 0 10px 28px color-mix(in oklab, var(--emerald-deep) 13%, transparent);
+}
+
+@utility hero-label {
+  background: color-mix(in oklab, var(--ivory) 72%, transparent);
+  border: 1px solid color-mix(in oklab, var(--gold) 55%, transparent);
+  box-shadow: 0 5px 18px color-mix(in oklab, var(--gold) 8%, transparent);
+}
+
+@utility hero-image-frame {
+  border-radius: 46% 54% 45% 55% / 31% 37% 63% 69%;
+  border: 1px solid color-mix(in oklab, var(--gold) 42%, transparent);
+  box-shadow:
+    0 22px 55px color-mix(in oklab, var(--emerald-deep) 18%, transparent),
+    0 0 0 12px color-mix(in oklab, var(--ivory) 60%, transparent);
+}
+
+@utility hero-leaf-card {
+  background: color-mix(in oklab, var(--ivory) 82%, transparent);
+  backdrop-filter: blur(12px);
+  border: 1px solid color-mix(in oklab, var(--gold) 38%, transparent);
+  box-shadow: 0 12px 28px color-mix(in oklab, var(--emerald-deep) 14%, transparent);
 }
 
 @utility glass-dark {

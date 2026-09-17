@@ -43,16 +43,11 @@ export function Navbar() {
         className="fixed inset-x-0 top-0 z-50 px-3 pt-3 md:px-6 md:pt-4"
       >
         <div
-          className={`glass-panel mx-auto grid max-w-[1400px] grid-cols-[minmax(0,1fr)_auto] items-center gap-3 rounded-full transition-all duration-500 lg:grid-cols-[auto_1fr_auto] ${
+          className={`hero-nav mx-auto grid max-w-[1400px] grid-cols-[minmax(0,1fr)_auto] items-center gap-3 rounded-full transition-all duration-500 lg:grid-cols-[auto_1fr_auto] ${
             scrolled
-              ? "px-3 py-1.5 shadow-[0_10px_30px_oklch(0.29_0.062_158_/_0.14)] md:px-5"
+              ? "px-3 py-1.5 shadow-[0_12px_34px_oklch(0.29_0.062_158_/_0.13)] md:px-5"
               : "px-3 py-2.5 md:px-6"
           }`}
-          style={{
-            backgroundColor: scrolled
-              ? "color-mix(in oklab, var(--ivory) 92%, transparent)"
-              : undefined,
-          }}
         >
           <Logo compact={scrolled} />
 
