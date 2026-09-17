@@ -66,22 +66,19 @@ export function Hero() {
 
       <div className="relative z-10 mx-auto grid w-full max-w-[1440px] items-center gap-7 px-5 pb-24 pt-24 md:min-h-[100svh] md:grid-cols-[minmax(0,0.95fr)_minmax(320px,1.05fr)] md:px-8 md:pb-24 md:pt-28 lg:gap-12 lg:px-14 xl:px-20">
         <div className="relative z-10 mx-auto w-full max-w-2xl md:mx-0">
-          <motion.div {...reveal(0.12)} className="flex items-center gap-4">
-            <div className="hero-logo-shell grid h-20 w-20 shrink-0 place-items-center rounded-full sm:h-24 sm:w-24">
+          <motion.div {...reveal(0.12)} className="flex flex-col items-start">
+            <div className="hero-logo-shell grid h-28 w-28 shrink-0 place-items-center rounded-full sm:h-36 sm:w-36 lg:h-[168px] lg:w-[168px]">
               <img
                 src={logoAsset.url}
                 alt="Amma's Organic Products logo"
-                width={96}
-                height={96}
+                width={168}
+                height={168}
                 className="h-[88%] w-[88%] rounded-full object-contain"
               />
             </div>
-            <div className="min-w-0">
-              <p className="font-display text-xl text-primary sm:text-2xl">Amma&apos;s Organic Products</p>
-              <p className="mt-1 text-[0.58rem] font-medium tracking-[0.24em] text-primary/65 sm:text-[0.65rem]">
-                PURE · NATURAL · HEALTHY
-              </p>
-            </div>
+            <p className="mt-4 text-[0.62rem] font-medium tracking-[0.26em] text-primary/70 sm:text-[0.7rem]">
+              PURE · NATURAL · HEALTHY
+            </p>
           </motion.div>
 
           <motion.p {...reveal(0.24)} className="hero-label mt-5 inline-flex items-center rounded-full px-4 py-2 text-[0.58rem] font-medium tracking-[0.18em] text-primary sm:text-[0.65rem]">
