@@ -58,7 +58,7 @@ export function Hero() {
             key={index}
             className="absolute rounded-full bg-gold/55"
             style={{ left: dot.left, top: dot.top, width: dot.size, height: dot.size }}
-            animate={reduceMotion ? undefined : { opacity: [0.25, 0.75, 0.25], scale: [1, 1.35, 1] }}
+            animate={reduceMotion ? false : { opacity: [0.25, 0.75, 0.25], scale: [1, 1.35, 1] }}
             transition={{ duration: 4, delay: dot.delay, repeat: Infinity, ease: "easeInOut" }}
           />
         ))}
@@ -139,7 +139,7 @@ export function Hero() {
           transition={{ duration: 1.15, delay: 0.25, ease: [0.22, 1, 0.36, 1] }}
           className="relative mx-auto h-[380px] w-full max-w-[620px] sm:h-[470px] md:h-[min(70svh,690px)] md:min-h-[460px]"
         >
-          <motion.div style={reduceMotion ? undefined : { x: imageX, y: imageY }} className="hero-image-frame absolute inset-3 overflow-hidden md:inset-0">
+          <motion.div style={reduceMotion ? {} : { x: imageX, y: imageY }} className="hero-image-frame absolute inset-3 overflow-hidden md:inset-0">
             <img
               src={heroImage}
               alt="Bright arrangement of organic powders, fresh vegetables, herbs and handmade soaps"
@@ -151,8 +151,8 @@ export function Hero() {
           </motion.div>
 
           <motion.div
-            style={reduceMotion ? undefined : { x: leafX, y: leafY }}
-            animate={reduceMotion ? undefined : { rotate: [-5, 2, -5], y: [0, -7, 0] }}
+            style={reduceMotion ? {} : { x: leafX, y: leafY }}
+            animate={reduceMotion ? false : { rotate: [-5, 2, -5], y: [0, -7, 0] }}
             transition={{ duration: 7, repeat: Infinity, ease: "easeInOut" }}
             className="hero-leaf-card absolute -left-1 top-[18%] hidden h-20 w-20 rotate-[-12deg] place-items-center rounded-full text-primary md:grid"
             aria-hidden
@@ -160,7 +160,7 @@ export function Hero() {
             <Leaf size={34} strokeWidth={1.1} />
           </motion.div>
           <motion.div
-            animate={reduceMotion ? undefined : { y: [0, -8, 0], rotate: [7, 11, 7] }}
+            animate={reduceMotion ? false : { y: [0, -8, 0], rotate: [7, 11, 7] }}
             transition={{ duration: 6, delay: 0.8, repeat: Infinity, ease: "easeInOut" }}
             className="hero-leaf-card absolute -right-1 bottom-[15%] hidden h-16 w-16 place-items-center rounded-full text-gold md:grid"
             aria-hidden
