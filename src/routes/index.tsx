@@ -1,20 +1,12 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { Navbar } from "@/components/Navbar";
 import { Hero } from "@/components/Hero";
 import { TrustIntro } from "@/components/TrustIntro";
-import { About } from "@/components/About";
-import { ProductGrid } from "@/components/ProductGrid";
-import { Services } from "@/components/Services";
-import { WhyChooseUs } from "@/components/WhyChooseUs";
+import { FeaturedCategories } from "@/components/FeaturedCategories";
+import { BestSellers } from "@/components/BestSellers";
+import { WhyShopPreview } from "@/components/WhyShopPreview";
+import { ReviewsPreview } from "@/components/ReviewsPreview";
 import { Gallery } from "@/components/Gallery";
 import { CallToAction } from "@/components/CallToAction";
-import { Contact } from "@/components/Contact";
-import { Footer } from "@/components/Footer";
-import { WhatsAppButton } from "@/components/WhatsAppButton";
-import { CartDrawer } from "@/components/CartDrawer";
-import { WishlistDrawer } from "@/components/WishlistDrawer";
-import { SearchOverlay } from "@/components/SearchOverlay";
-import { ShopProvider } from "@/store/shop";
 
 const title = "Amma's Organic Products | Homemade Organic Powders, Vijayawada";
 const description =
@@ -36,24 +28,15 @@ export const Route = createFileRoute("/")({
 
 function Index() {
   return (
-    <ShopProvider>
-      <Navbar />
-      <main>
-        <Hero />
-        <TrustIntro />
-        <About />
-        <ProductGrid />
-        <Services />
-        <WhyChooseUs />
-        <Gallery />
-        <CallToAction />
-        <Contact />
-      </main>
-      <Footer />
-      <WhatsAppButton />
-      <CartDrawer />
-      <WishlistDrawer />
-      <SearchOverlay />
-    </ShopProvider>
+    <>
+      <Hero />
+      <TrustIntro />
+      <FeaturedCategories />
+      <BestSellers />
+      <WhyShopPreview />
+      <ReviewsPreview />
+      <Gallery preview />
+      <CallToAction />
+    </>
   );
 }
