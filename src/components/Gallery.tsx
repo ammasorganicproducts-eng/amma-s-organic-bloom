@@ -1,6 +1,7 @@
-import { useEffect, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
-import { ChevronLeft, ChevronRight, X } from "lucide-react";
+import { Link } from "@tanstack/react-router";
+import { ArrowRight, ChevronLeft, ChevronRight, X } from "lucide-react";
 import { SectionHeading } from "@/components/Reveal";
 import g1 from "@/assets/gallery/g1.png.asset.json";
 import g2 from "@/assets/gallery/g2.png.asset.json";
@@ -16,10 +17,17 @@ import candles from "@/assets/products/perfumed-candles.jpg";
  * Replace `src` with your own photo (drop it in src/assets/gallery/ and import it),
  * then edit the title and category. Add or remove entries freely.
  */
+export type GalleryCategory =
+  | "Our Journey"
+  | "Products"
+  | "Behind the Scenes"
+  | "Natural Ingredients"
+  | "Packaging";
+
 export interface GalleryItem {
   src: string;
   title: string;
-  category: "Our Journey" | "Products" | "Behind the Scenes" | "Natural Ingredients" | "Packaging";
+  category: GalleryCategory;
 }
 
 export const GALLERY_ITEMS: GalleryItem[] = [
@@ -33,16 +41,32 @@ export const GALLERY_ITEMS: GalleryItem[] = [
   { src: candles, title: "Hand-poured candles", category: "Packaging" },
 ];
 
-export function Gallery() {
+export function Gallery({
+  preview = false,
+  showHeading = true,
+}: {
+  preview?: boolean;
+  showHeading?: boolean;
+}) {
+  const [filter, setFilter] = useState<"All" | GalleryCategory>("All");
   const [index, setIndex] = useState<number | null>(null);
+
+  const items = useMemo(() => {
+    const base = filter === "All" ? GALLERY_ITEMS : GALLERY_ITEMS.filter((i) => i.category === filter);
+    return preview ? base.slice(0, 6) : base;
+  }, [filter, preview]);
+
+  const filters = useMemo<Array<"All" | GalleryCategory>>(() => {
+    const cats = Array.from(new Set(GALLERY_ITEMS.map((i) => i.category)));
+    return ["All", ...cats];
+  }, []);
 
   useEffect(() => {
     if (index === null) return;
     const onKey = (e: KeyboardEvent) => {
       if (e.key === "Escape") setIndex(null);
-      if (e.key === "ArrowRight") setIndex((i) => ((i ?? 0) + 1) % GALLERY_ITEMS.length);
-      if (e.key === "ArrowLeft")
-        setIndex((i) => ((i ?? 0) - 1 + GALLERY_ITEMS.length) % GALLERY_ITEMS.length);
+      if (e.key === "ArrowRight") setIndex((i) => ((i ?? 0) + 1) % items.length);
+      if (e.key === "ArrowLeft") setIndex((i) => ((i ?? 0) - 1 + items.length) % items.length);
     };
     document.body.style.overflow = "hidden";
     window.addEventListener("keydown", onKey);
@@ -50,21 +74,45 @@ export function Gallery() {
       document.body.style.overflow = "";
       window.removeEventListener("keydown", onKey);
     };
-  }, [index]);
+  }, [index, items.length]);
 
-  const active = index === null ? null : GALLERY_ITEMS[index];
+  const active = index === null ? null : items[index];
 
   return (
-    <section id="gallery" className="section-pad bg-background">
+    <section className="section-pad bg-background">
       <div className="mx-auto max-w-[1300px] px-5 md:px-10">
-        <SectionHeading
-          eyebrow="Gallery"
-          title="From Our Hands to Your Home"
-          subtitle="A glimpse into Amma's Organic Products."
-        />
+        {showHeading && (
+          <SectionHeading
+            eyebrow="Gallery"
+            title="From Our Hands to Your Home"
+            subtitle="A glimpse into Amma's Organic Products."
+          />
+        )}
 
-        <div className="mt-14 columns-2 gap-4 [column-fill:_balance] md:columns-3 lg:columns-4">
-          {GALLERY_ITEMS.map((item, i) => (
+        {!preview && (
+          <div className="mt-10 flex flex-wrap justify-center gap-2">
+            {filters.map((f) => (
+              <button
+                key={f}
+                type="button"
+                onClick={() => {
+                  setFilter(f);
+                  setIndex(null);
+                }}
+                className={`rounded-full border px-5 py-2.5 text-[0.68rem] uppercase tracking-[0.16em] transition-colors ${
+                  filter === f
+                    ? "border-transparent bg-primary text-cream"
+                    : "border-border text-foreground/70 hover:border-gold/50 hover:text-primary"
+                }`}
+              >
+                {f}
+              </button>
+            ))}
+          </div>
+        )}
+
+        <div className="mt-12 columns-2 gap-4 [column-fill:_balance] md:columns-3 lg:columns-4">
+          {items.map((item, i) => (
             <motion.button
               key={item.title + i}
               type="button"
@@ -89,6 +137,14 @@ export function Gallery() {
             </motion.button>
           ))}
         </div>
+
+        {preview && (
+          <div className="mt-8 flex justify-center">
+            <Link to="/gallery" className="btn-base btn-outline-gold text-primary">
+              View Gallery <ArrowRight size={14} strokeWidth={1.6} />
+            </Link>
+          </div>
+        )}
       </div>
 
       <AnimatePresence>
@@ -113,7 +169,7 @@ export function Gallery() {
               aria-label="Previous image"
               onClick={(e) => {
                 e.stopPropagation();
-                setIndex((i) => ((i ?? 0) - 1 + GALLERY_ITEMS.length) % GALLERY_ITEMS.length);
+                setIndex((i) => ((i ?? 0) - 1 + items.length) % items.length);
               }}
               className="absolute left-3 flex h-11 w-11 items-center justify-center rounded-full border border-gold/40 text-cream md:left-8"
             >
@@ -142,7 +198,7 @@ export function Gallery() {
               aria-label="Next image"
               onClick={(e) => {
                 e.stopPropagation();
-                setIndex((i) => ((i ?? 0) + 1) % GALLERY_ITEMS.length);
+                setIndex((i) => ((i ?? 0) + 1) % items.length);
               }}
               className="absolute right-3 flex h-11 w-11 items-center justify-center rounded-full border border-gold/40 text-cream md:right-8"
             >
