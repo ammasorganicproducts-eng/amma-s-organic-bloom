@@ -1,9 +1,10 @@
+import { Link } from "@tanstack/react-router";
 import logoAsset from "@/assets/logo.png.asset.json";
 import { BRAND } from "@/lib/brand";
 
 export function Logo({ compact = false }: { compact?: boolean }) {
   return (
-    <a href="#home" className="flex min-w-0 items-center gap-2.5" aria-label={BRAND.name}>
+    <Link to="/" className="flex min-w-0 items-center gap-2.5" aria-label={BRAND.name}>
       <img
         src={logoAsset.url}
         alt={`${BRAND.name} logo`}
@@ -21,6 +22,6 @@ export function Logo({ compact = false }: { compact?: boolean }) {
           Pure · Natural · Healthy
         </span>
       </span>
-    </a>
+    </Link>
   );
 }
