@@ -10,7 +10,7 @@ const description =
 
 export const Route = createFileRoute("/products/")({
   validateSearch: (search: Record<string, unknown>): { category?: Category } => {
-    const value = search.category;
+    const value = search["category"];
     const valid = CATEGORIES.includes(value as Category) && value !== "All";
     return valid ? { category: value as Category } : {};
   },
