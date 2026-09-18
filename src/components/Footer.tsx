@@ -1,17 +1,18 @@
+import { Link } from "@tanstack/react-router";
 import { Instagram, Youtube } from "lucide-react";
 import logoAsset from "@/assets/logo.png.asset.json";
 import { BRAND } from "@/lib/brand";
 
 const QUICK_LINKS = [
-  { label: "Home", href: "#home" },
-  { label: "About", href: "#about" },
-  { label: "Products", href: "#products" },
-  { label: "Services", href: "#services" },
-  { label: "Gallery", href: "#gallery" },
-  { label: "Contact", href: "#contact" },
-];
+  { label: "Home", to: "/" },
+  { label: "About", to: "/about" },
+  { label: "Products", to: "/products" },
+  { label: "Services", to: "/services" },
+  { label: "Gallery", to: "/gallery" },
+  { label: "Contact", to: "/contact" },
+] as const;
 
-const PRODUCT_LINKS = ["Powders", "Soaps", "Fresheners", "Juices", "Others"];
+const PRODUCT_LINKS = ["Powders", "Soaps", "Fresheners", "Juices", "Others"] as const;
 
 export function Footer() {
   return (
@@ -61,12 +62,17 @@ export function Footer() {
             <h3 className="eyebrow text-gold">Quick Links</h3>
             <ul className="mt-5 space-y-2.5 text-sm text-cream/70">
               {QUICK_LINKS.map((l) => (
-                <li key={l.href}>
-                  <a href={l.href} className="transition-colors hover:text-gold">
+                <li key={l.to}>
+                  <Link to={l.to} className="transition-colors hover:text-gold">
                     {l.label}
-                  </a>
+                  </Link>
                 </li>
               ))}
+              <li>
+                <Link to="/why-choose-us" className="transition-colors hover:text-gold">
+                  Why Choose Us
+                </Link>
+              </li>
             </ul>
           </div>
 
@@ -75,9 +81,13 @@ export function Footer() {
             <ul className="mt-5 space-y-2.5 text-sm text-cream/70">
               {PRODUCT_LINKS.map((p) => (
                 <li key={p}>
-                  <a href="#products" className="transition-colors hover:text-gold">
+                  <Link
+                    to="/products"
+                    search={{ category: p }}
+                    className="transition-colors hover:text-gold"
+                  >
                     {p}
-                  </a>
+                  </Link>
                 </li>
               ))}
             </ul>
