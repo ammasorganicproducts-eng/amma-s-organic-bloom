@@ -1,24 +1,26 @@
 import { useEffect, useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
+import { Link, useRouterState } from "@tanstack/react-router";
 import { Heart, Menu, MessageCircle, Search, ShoppingBag, X } from "lucide-react";
 import { Logo } from "@/components/Logo";
 import { useShop } from "@/store/shop";
 import { generalEnquiry, waLink } from "@/lib/brand";
 
-const NAV_LINKS = [
-  { label: "Home", href: "#home" },
-  { label: "About", href: "#about" },
-  { label: "Products", href: "#products" },
-  { label: "Services", href: "#services" },
-  { label: "Gallery", href: "#gallery" },
-  { label: "Why Choose Us", href: "#why-us" },
-  { label: "Contact", href: "#contact" },
-];
+export const NAV_LINKS = [
+  { label: "Home", to: "/" },
+  { label: "About", to: "/about" },
+  { label: "Products", to: "/products" },
+  { label: "Services", to: "/services" },
+  { label: "Gallery", to: "/gallery" },
+  { label: "Why Choose Us", to: "/why-choose-us" },
+  { label: "Contact", to: "/contact" },
+] as const;
 
 export function Navbar() {
   const [scrolled, setScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
   const { cartCount, wishlist, openDrawer } = useShop();
+  const pathname = useRouterState({ select: (s) => s.location.pathname });
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 40);
@@ -26,6 +28,10 @@ export function Navbar() {
     window.addEventListener("scroll", onScroll, { passive: true });
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
+
+  useEffect(() => {
+    setMenuOpen(false);
+  }, [pathname]);
 
   useEffect(() => {
     document.body.style.overflow = menuOpen ? "hidden" : "";
@@ -53,13 +59,15 @@ export function Navbar() {
 
           <nav className="hidden items-center justify-center gap-1 lg:flex">
             {NAV_LINKS.map((link) => (
-              <a
-                key={link.href}
-                href={link.href}
+              <Link
+                key={link.to}
+                to={link.to}
+                activeOptions={{ exact: link.to === "/" }}
+                activeProps={{ className: "!text-primary after:!scale-x-100" }}
                 className="relative rounded-full px-3 py-2 text-[0.8rem] font-normal tracking-wide text-foreground/80 transition-colors hover:text-primary after:absolute after:inset-x-3 after:bottom-1 after:h-px after:origin-right after:scale-x-0 after:bg-gold after:transition-transform after:duration-300 hover:after:origin-left hover:after:scale-x-100"
               >
                 {link.label}
-              </a>
+              </Link>
             ))}
           </nav>
 
@@ -127,7 +135,7 @@ export function Navbar() {
               animate={{ x: 0 }}
               exit={{ x: "100%" }}
               transition={{ type: "spring", damping: 28, stiffness: 240 }}
-              className="emerald-surface grain absolute inset-y-0 right-0 flex w-[86%] max-w-sm flex-col p-6"
+              className="emerald-surface grain absolute inset-y-0 right-0 flex w-[86%] max-w-sm flex-col overflow-y-auto p-6"
             >
               <div className="flex items-center justify-between">
                 <span className="eyebrow text-gold">Menu</span>
@@ -135,7 +143,7 @@ export function Navbar() {
                   type="button"
                   aria-label="Close menu"
                   onClick={() => setMenuOpen(false)}
-                  className="flex h-9 w-9 items-center justify-center rounded-full border border-gold/30"
+                  className="flex h-9 w-9 items-center justify-center rounded-full border border-gold/30 text-cream"
                 >
                   <X size={18} strokeWidth={1.5} />
                 </button>
@@ -143,17 +151,22 @@ export function Navbar() {
 
               <nav className="mt-8 flex flex-col gap-1">
                 {NAV_LINKS.map((link, i) => (
-                  <motion.a
-                    key={link.href}
-                    href={link.href}
-                    onClick={() => setMenuOpen(false)}
+                  <motion.div
+                    key={link.to}
                     initial={{ opacity: 0, x: 24 }}
                     animate={{ opacity: 1, x: 0 }}
                     transition={{ delay: 0.06 * i + 0.1, duration: 0.45 }}
-                    className="border-b border-gold/15 py-3 font-display text-2xl text-cream/95"
                   >
-                    {link.label}
-                  </motion.a>
+                    <Link
+                      to={link.to}
+                      activeOptions={{ exact: link.to === "/" }}
+                      activeProps={{ className: "!text-gold" }}
+                      onClick={() => setMenuOpen(false)}
+                      className="block border-b border-gold/15 py-3 font-display text-2xl text-cream/95"
+                    >
+                      {link.label}
+                    </Link>
+                  </motion.div>
                 ))}
               </nav>
 

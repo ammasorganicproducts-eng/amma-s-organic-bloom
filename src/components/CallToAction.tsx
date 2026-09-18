@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+import { Link } from "@tanstack/react-router";
 import { Leaf, MessageCircle } from "lucide-react";
 import { Reveal } from "@/components/Reveal";
 import { generalEnquiry, waLink } from "@/lib/brand";
@@ -34,9 +35,9 @@ export function CallToAction() {
             living.
           </p>
           <div className="mt-9 flex flex-wrap justify-center gap-3">
-            <a href="#products" className="btn-base btn-gold">
+            <Link to="/products" className="btn-base btn-gold">
               Explore Products
-            </a>
+            </Link>
             <a
               href={waLink(generalEnquiry)}
               target="_blank"
