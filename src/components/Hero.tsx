@@ -1,4 +1,5 @@
 import { motion, useMotionValue, useReducedMotion, useSpring, useTransform } from "framer-motion";
+import { Link } from "@tanstack/react-router";
 import { ArrowRight, Heart, Leaf, MessageCircle, ShieldCheck, Sparkles } from "lucide-react";
 import heroImage from "@/assets/hero-bright.jpg";
 import logoAsset from "@/assets/logo.png.asset.json";
@@ -98,9 +99,9 @@ export function Hero() {
 
           <motion.div {...reveal(0.6)} className="mt-7 flex flex-col gap-3 sm:flex-row sm:flex-wrap">
             <Button asChild size="lg" className="h-12 rounded-full bg-primary px-7 text-[0.69rem] font-medium tracking-[0.14em] text-primary-foreground shadow-[0_12px_28px_color-mix(in_oklab,var(--primary)_22%,transparent)] transition-all duration-300 hover:-translate-y-0.5 hover:bg-emerald-deep sm:w-auto">
-              <a href="#products">
+              <Link to="/products">
                 EXPLORE PRODUCTS <ArrowRight size={15} strokeWidth={1.7} />
-              </a>
+              </Link>
             </Button>
             <Button asChild variant="outline" size="lg" className="h-12 rounded-full border-primary/45 bg-ivory/70 px-7 text-[0.69rem] font-medium tracking-[0.1em] text-primary shadow-sm transition-all duration-300 hover:-translate-y-0.5 hover:border-primary hover:bg-ivory hover:text-primary sm:w-auto">
               <a href={waLink(generalEnquiry)} target="_blank" rel="noreferrer">
