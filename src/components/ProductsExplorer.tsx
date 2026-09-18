@@ -44,9 +44,9 @@ export function ProductsExplorer({ initialCategory = "All" }: { initialCategory?
   return (
     <section className="section-pad bg-background">
       <div className="mx-auto grid max-w-[1300px] gap-8 px-5 md:px-10 lg:grid-cols-[230px_minmax(0,1fr)]">
-        <aside className="lg:sticky lg:top-28 lg:self-start">
+        <aside className="min-w-0 lg:sticky lg:top-28 lg:self-start">
           <h2 className="eyebrow text-gold">Categories</h2>
-          <div className="mt-4 flex gap-2 overflow-x-auto pb-2 lg:flex-col lg:overflow-visible lg:pb-0">
+          <div className="no-scrollbar mt-4 flex w-full max-w-full gap-2 overflow-x-auto pb-2 lg:flex-col lg:overflow-visible lg:pb-0">
             {CATEGORIES.map((cat) => (
               <button
                 key={cat}
@@ -65,7 +65,7 @@ export function ProductsExplorer({ initialCategory = "All" }: { initialCategory?
           </div>
         </aside>
 
-        <div>
+        <div className="min-w-0">
           <div className="flex flex-col gap-3 sm:flex-row sm:items-center">
             <label className="flex min-w-0 flex-1 items-center gap-2 rounded-full border border-border bg-ivory px-4 py-2.5">
               <Search size={16} strokeWidth={1.6} className="shrink-0 text-gold" />
