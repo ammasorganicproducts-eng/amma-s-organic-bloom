@@ -1,28 +1,11 @@
-import { createFileRoute, Link } from "@tanstack/react-router";
+import { useEffect } from "react";
+import { Link } from "react-router-dom";
 import { ArrowRight, Leaf, MessageCircle } from "lucide-react";
 import { PageHeader } from "@/components/PageHeader";
-import { About } from "@/components/About";
+import { About as AboutSection } from "@/components/About";
 import { Reveal, SectionHeading } from "@/components/Reveal";
 import { CallToAction } from "@/components/CallToAction";
 import { generalEnquiry, waLink } from "@/lib/brand";
-
-const title = "About Amma's Organic Products | Our Story, Mission & Values";
-const description =
-  "The story behind Amma's Organic Products — a small homegrown Vijayawada business making natural, homemade powders, soaps and wellness essentials with care.";
-
-export const Route = createFileRoute("/about")({
-  head: () => ({
-    meta: [
-      { title },
-      { name: "description", content: description },
-      { property: "og:title", content: title },
-      { property: "og:description", content: description },
-      { property: "og:type", content: "website" },
-      { name: "twitter:card", content: "summary_large_image" },
-    ],
-  }),
-  component: AboutPage,
-});
 
 const PILLARS = [
   {
@@ -48,13 +31,29 @@ const PROCESS = [
 ];
 
 const TIMELINE = [
-  { year: "The Beginning", text: "A home kitchen, a stone grinder and a few jars of powder made for family." },
-  { year: "Word Spreads", text: "Neighbours and friends start asking for their own jars every month." },
-  { year: "Growing Range", text: "Handmade soaps, fresheners, juices and personal care join the powders." },
-  { year: "Today", text: "A small homegrown business serving families across Vijayawada and beyond." },
+  {
+    year: "The Beginning",
+    text: "A home kitchen, a stone grinder and a few jars of powder made for family.",
+  },
+  {
+    year: "Word Spreads",
+    text: "Neighbours and friends start asking for their own jars every month.",
+  },
+  {
+    year: "Growing Range",
+    text: "Handmade soaps, fresheners, juices and personal care join the powders.",
+  },
+  {
+    year: "Today",
+    text: "A small homegrown business serving families across Vijayawada and beyond.",
+  },
 ];
 
-function AboutPage() {
+export default function About() {
+  useEffect(() => {
+    document.title = "About Amma's Organic Products | Our Story, Mission & Values";
+  }, []);
+
   return (
     <>
       <PageHeader
@@ -63,7 +62,7 @@ function AboutPage() {
         subtitle="A small homegrown business offering natural, homemade and carefully prepared products for everyday wellness and personal care."
       />
 
-      <About />
+      <AboutSection />
 
       <section className="section-pad bg-background">
         <div className="mx-auto max-w-[1200px] px-5 md:px-10">
@@ -75,7 +74,9 @@ function AboutPage() {
                   <Leaf size={26} strokeWidth={1.2} className="text-gold" />
                   <h3 className="mt-5 font-display text-2xl text-primary">{pillar.title}</h3>
                   <span className="gold-line mt-4 block h-px w-12" aria-hidden />
-                  <p className="mt-4 text-sm leading-relaxed text-muted-foreground">{pillar.text}</p>
+                  <p className="mt-4 text-sm leading-relaxed text-muted-foreground">
+                    {pillar.text}
+                  </p>
                 </article>
               </Reveal>
             ))}

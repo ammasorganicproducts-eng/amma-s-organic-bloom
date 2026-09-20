@@ -1,6 +1,6 @@
-import { Link } from "@tanstack/react-router";
+import { Link } from "react-router-dom";
 import { Instagram, Youtube } from "lucide-react";
-import logoAsset from "@/assets/logo.png.asset.json";
+import ammaLogo from "@/assets/amma_logo.png";
 import { BRAND } from "@/lib/brand";
 
 const QUICK_LINKS = [
@@ -22,8 +22,8 @@ export function Footer() {
           <div className="lg:col-span-1">
             <div className="flex items-center gap-3">
               <img
-                src={logoAsset.url}
-                alt={`${BRAND.name} logo`}
+                src={ammaLogo}
+                alt="Amma's Organic Products"
                 width={56}
                 height={56}
                 loading="lazy"
@@ -82,8 +82,7 @@ export function Footer() {
               {PRODUCT_LINKS.map((p) => (
                 <li key={p}>
                   <Link
-                    to="/products"
-                    search={{ category: p }}
+                    to={`/products?category=${encodeURIComponent(p)}`}
                     className="transition-colors hover:text-gold"
                   >
                     {p}

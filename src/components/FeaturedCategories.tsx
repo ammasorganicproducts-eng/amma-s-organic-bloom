@@ -1,4 +1,4 @@
-import { Link } from "@tanstack/react-router";
+import { Link } from "react-router-dom";
 import { ArrowRight } from "lucide-react";
 import { Reveal, SectionHeading } from "@/components/Reveal";
 import { products, type Category } from "@/data/products";
@@ -30,8 +30,7 @@ export function FeaturedCategories() {
           {CARDS.map((card, i) => (
             <Reveal key={card.category} delay={i * 0.08}>
               <Link
-                to="/products"
-                search={{ category: card.category }}
+                to={`/products?category=${encodeURIComponent(card.category)}`}
                 className="group card-3d block h-full overflow-hidden rounded-2xl border border-border bg-ivory"
               >
                 <img

@@ -1,26 +1,8 @@
-import { createFileRoute } from "@tanstack/react-router";
+import { useEffect } from "react";
 import { PageHeader } from "@/components/PageHeader";
-import { WhyChooseUs } from "@/components/WhyChooseUs";
+import { WhyChooseUs as WhyChooseUsSection } from "@/components/WhyChooseUs";
 import { Reveal, SectionHeading } from "@/components/Reveal";
 import { CallToAction } from "@/components/CallToAction";
-
-const title = "Why Choose Us | Amma's Organic Products";
-const description =
-  "Homemade with care, pure natural ingredients, no preservatives or chemicals, quality assurance, traditional preparation and fresh ingredients.";
-
-export const Route = createFileRoute("/why-choose-us")({
-  head: () => ({
-    meta: [
-      { title },
-      { name: "description", content: description },
-      { property: "og:title", content: title },
-      { property: "og:description", content: description },
-      { property: "og:type", content: "website" },
-      { name: "twitter:card", content: "summary_large_image" },
-    ],
-  }),
-  component: WhyChooseUsPage,
-});
 
 const MORE = [
   {
@@ -40,7 +22,11 @@ const MORE = [
   },
 ];
 
-function WhyChooseUsPage() {
+export default function WhyChooseUs() {
+  useEffect(() => {
+    document.title = "Why Choose Us | Amma's Organic Products";
+  }, []);
+
   return (
     <>
       <PageHeader
@@ -49,7 +35,7 @@ function WhyChooseUsPage() {
         subtitle="Simple, healthy and honest living — that is the whole idea behind everything we make."
       />
 
-      <WhyChooseUs />
+      <WhyChooseUsSection />
 
       <section className="section-pad bg-background">
         <div className="mx-auto max-w-[1200px] px-5 md:px-10">

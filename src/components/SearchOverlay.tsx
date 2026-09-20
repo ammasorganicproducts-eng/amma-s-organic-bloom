@@ -41,7 +41,10 @@ export function SearchOverlay() {
           exit={{ opacity: 0 }}
           className="fixed inset-0 z-[75] overflow-y-auto"
         >
-          <div className="absolute inset-0 bg-emerald-dark/70 backdrop-blur-md" onClick={closeDrawer} />
+          <div
+            className="absolute inset-0 bg-emerald-dark/70 backdrop-blur-md"
+            onClick={closeDrawer}
+          />
           <motion.div
             initial={{ y: -30, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
@@ -49,7 +52,10 @@ export function SearchOverlay() {
             transition={{ duration: 0.35, ease: [0.22, 1, 0.36, 1] }}
             className="relative mx-auto w-full max-w-3xl px-4 py-16 md:py-24"
           >
-            <div className="glass-panel rounded-2xl p-4 md:p-6" style={{ backgroundColor: "var(--ivory)" }}>
+            <div
+              className="glass-panel rounded-2xl p-4 md:p-6"
+              style={{ backgroundColor: "var(--ivory)" }}
+            >
               <div className="flex items-center gap-3 border-b border-border pb-4">
                 <Search size={20} strokeWidth={1.5} className="shrink-0 text-gold" />
                 <input

@@ -10,8 +10,7 @@ export const BRAND = {
   address:
     "HIG-7, Near VMC Kalyana Mandapam, Crombay Road, Bhavanipuram, Vijayawada, Beside Just Bake",
   hours: "Mon – Sun · 7:00 AM – 10:00 PM",
-  instagram:
-    "https://www.instagram.com/ammas__organic__powders?stkn=dmR0dnp0eTlkNDU3",
+  instagram: "https://www.instagram.com/ammas__organic__powders?stkn=dmR0dnp0eTlkNDU3",
   youtube: "https://youtube.com/@godsgrace5577?si=EbgGX5UiCeCh8MP8",
 } as const;
 
@@ -39,17 +38,12 @@ export const productEnquiry = (p: Product) =>
 
 export const generalEnquiry = `Hello ${BRAND.name}, I would like to know more about your products.`;
 
-export const orderMessage = (
-  lines: Array<{ product: Product; qty: number }>,
-  total: number,
-) => {
+export const orderMessage = (lines: Array<{ product: Product; qty: number }>, total: number) => {
   const items = lines
     .map(({ product, qty }) => {
       const size = product.weight ? ` – ${product.weight}` : "";
       const amount =
-        product.price === null
-          ? " – Price on enquiry"
-          : ` – ${formatPrice(product.price * qty)}`;
+        product.price === null ? " – Price on enquiry" : ` – ${formatPrice(product.price * qty)}`;
       return `${product.name}${size} × ${qty}${amount}`;
     })
     .join(", ");

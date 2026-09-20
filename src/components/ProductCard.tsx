@@ -1,6 +1,6 @@
 import { useRef, useState } from "react";
 import { motion } from "framer-motion";
-import { Link } from "@tanstack/react-router";
+import { Link } from "react-router-dom";
 import { Check, Eye, Heart, MessageCircle, ShoppingBag } from "lucide-react";
 import type { Product } from "@/data/products";
 import { formatPrice, productEnquiry, waLink } from "@/lib/brand";
@@ -47,11 +47,7 @@ export function ProductCard({
         className="card-3d relative flex h-full flex-col overflow-hidden rounded-2xl border border-border bg-ivory transition-colors group-hover:border-gold/45"
       >
         <div className="relative overflow-hidden">
-          <Link
-            to="/products/$productId"
-            params={{ productId: product.id }}
-            aria-label={`View ${product.name}`}
-          >
+          <Link to={`/products/${product.id}`} aria-label={`View ${product.name}`}>
             <img
               src={product.image}
               alt={product.name}
@@ -91,7 +87,7 @@ export function ProductCard({
         </div>
 
         <div className="flex flex-1 flex-col p-4">
-          <Link to="/products/$productId" params={{ productId: product.id }}>
+          <Link to={`/products/${product.id}`}>
             <h3 className="font-display text-lg leading-snug text-primary transition-colors hover:text-gold">
               {product.name}
             </h3>

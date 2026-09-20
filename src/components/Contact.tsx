@@ -1,4 +1,13 @@
-import { Clock, Instagram, Mail, MapPin, MessageCircle, Navigation, Phone, Youtube } from "lucide-react";
+import {
+  Clock,
+  Instagram,
+  Mail,
+  MapPin,
+  MessageCircle,
+  Navigation,
+  Phone,
+  Youtube,
+} from "lucide-react";
 import { Reveal, SectionHeading } from "@/components/Reveal";
 import { BRAND, generalEnquiry, mapEmbedUrl, mapsUrl, waLink } from "@/lib/brand";
 

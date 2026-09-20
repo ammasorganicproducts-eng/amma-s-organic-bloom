@@ -1,6 +1,6 @@
 import { useEffect, type ReactNode } from "react";
 import { motion } from "framer-motion";
-import { useRouterState } from "@tanstack/react-router";
+import { useLocation } from "react-router-dom";
 import { Navbar } from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
 import { WhatsAppButton } from "@/components/WhatsAppButton";
@@ -10,7 +10,7 @@ import { SearchOverlay } from "@/components/SearchOverlay";
 import { ShopProvider } from "@/store/shop";
 
 export function SiteLayout({ children }: { children: ReactNode }) {
-  const pathname = useRouterState({ select: (s) => s.location.pathname });
+  const { pathname } = useLocation();
 
   useEffect(() => {
     window.scrollTo(0, 0);

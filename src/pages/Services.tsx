@@ -1,26 +1,8 @@
-import { createFileRoute } from "@tanstack/react-router";
+import { useEffect } from "react";
 import { PageHeader } from "@/components/PageHeader";
-import { Services } from "@/components/Services";
+import { Services as ServicesSection } from "@/components/Services";
 import { Reveal, SectionHeading } from "@/components/Reveal";
 import { CallToAction } from "@/components/CallToAction";
-
-const title = "Our Services | Amma's Organic Products";
-const description =
-  "Organic products, natural personal care, gift packs, festival hampers, bulk orders and reseller orders from Amma's Organic Products, Vijayawada.";
-
-export const Route = createFileRoute("/services")({
-  head: () => ({
-    meta: [
-      { title },
-      { name: "description", content: description },
-      { property: "og:title", content: title },
-      { property: "og:description", content: description },
-      { property: "og:type", content: "website" },
-      { name: "twitter:card", content: "summary_large_image" },
-    ],
-  }),
-  component: ServicesPage,
-});
 
 const EXTRA = [
   {
@@ -45,7 +27,11 @@ const EXTRA = [
   },
 ];
 
-function ServicesPage() {
+export default function Services() {
+  useEffect(() => {
+    document.title = "Our Services | Amma's Organic Products";
+  }, []);
+
   return (
     <>
       <PageHeader
@@ -54,7 +40,7 @@ function ServicesPage() {
         subtitle="Natural, quality products made with care — helping families choose healthier and more natural options."
       />
 
-      <Services />
+      <ServicesSection />
 
       <section className="section-pad bg-background">
         <div className="mx-auto max-w-[1200px] px-5 md:px-10">

@@ -47,8 +47,7 @@ https://www.instagram.com/ammas__organic__powders?stkn=dmR0dnp0eTlkNDU3
 YouTube:
 https://youtube.com/@godsgrace5577?si=EbgGX5UiCeCh8MP8
 
-==================================================
-2. DESIGN DIRECTION
+================================================== 2. DESIGN DIRECTION
 ===================
 
 Create a HIGH-END 3D PREMIUM organic website.
@@ -70,10 +69,10 @@ Avoid making the entire website green.
 
 Use:
 
-* Light cream/ivory backgrounds for product sections
-* Deep emerald/forest green for hero and major sections
-* Gold accents for premium details
-* Natural brown for secondary elements
+- Light cream/ivory backgrounds for product sections
+- Deep emerald/forest green for hero and major sections
+- Gold accents for premium details
+- Natural brown for secondary elements
 
 The website should look expensive, elegant and trustworthy.
 
@@ -82,8 +81,7 @@ Premium organic brands + luxury wellness brands + modern ecommerce websites.
 
 DO NOT make it look like a generic grocery website.
 
-==================================================
-3. LOGO
+================================================== 3. LOGO
 =======
 
 Create a premium text-based/logo-style identity for:
@@ -106,8 +104,7 @@ Add a subtle 3D embossed effect to the logo/emblem.
 
 Do not make the logo excessively large.
 
-==================================================
-4. TYPOGRAPHY
+================================================== 4. TYPOGRAPHY
 =============
 
 Use a sophisticated but readable typography system.
@@ -128,8 +125,7 @@ Use:
 • clean body text
 • spacious typography
 
-==================================================
-5. HEADER / NAVIGATION
+================================================== 5. HEADER / NAVIGATION
 ======================
 
 Create a premium sticky/floating navbar.
@@ -173,8 +169,7 @@ Cart + hamburger menu on right
 
 Create a beautiful animated mobile menu.
 
-==================================================
-6. HERO SECTION
+================================================== 6. HERO SECTION
 ===============
 
 Create a cinematic FULL-SCREEN hero section.
@@ -215,8 +210,7 @@ Add parallax effect.
 
 Do NOT make the animation distracting.
 
-==================================================
-7. 3D HERO INTERACTION
+================================================== 7. 3D HERO INTERACTION
 ======================
 
 Create subtle premium 3D effects.
@@ -235,8 +229,7 @@ Use Framer Motion / appropriate animation library.
 
 Animations should feel premium and smooth, not flashy.
 
-==================================================
-8. TRUST / BRAND INTRO SECTION
+================================================== 8. TRUST / BRAND INTRO SECTION
 ==============================
 
 Immediately below hero, create a premium introduction section.
@@ -266,8 +259,7 @@ A small business bringing traditional goodness closer to every home.
 
 Use elegant 3D cards with soft shadows.
 
-==================================================
-9. ABOUT SECTION
+================================================== 9. ABOUT SECTION
 ================
 
 Section title:
@@ -294,8 +286,7 @@ Add a premium gold botanical line illustration.
 
 Use scroll reveal animation.
 
-==================================================
-10. PRODUCT SECTION
+================================================== 10. PRODUCT SECTION
 ===================
 
 Create a full ecommerce-style Products section.
@@ -343,8 +334,7 @@ On hover:
 
 Do not make cards excessively large.
 
-==================================================
-11. PRODUCT DATA
+================================================== 11. PRODUCT DATA
 ================
 
 Use the following product information from the provided product details.
@@ -408,8 +398,7 @@ Use product images that visually match each product.
 IMPORTANT:
 Do not use random images that don't correspond to the product.
 
-==================================================
-12. SOAP CATEGORY
+================================================== 12. SOAP CATEGORY
 =================
 
 All listed soaps:
@@ -433,8 +422,7 @@ flowers
 botanical leaves
 natural powders
 
-==================================================
-13. FRESHENERS
+================================================== 13. FRESHENERS
 ==============
 
 Wardrobe Freshener
@@ -447,8 +435,7 @@ Create premium lifestyle product images.
 
 Show subtle wardrobe/car environment styling.
 
-==================================================
-14. JUICE CATEGORY
+================================================== 14. JUICE CATEGORY
 ==================
 
 Products listed:
@@ -468,8 +455,7 @@ and provide:
 
 button.
 
-==================================================
-15. OTHER PRODUCTS
+================================================== 15. OTHER PRODUCTS
 ==================
 
 Products:
@@ -487,8 +473,7 @@ Display:
 
 with WhatsApp enquiry.
 
-==================================================
-16. WHATSAPP ENQUIRY
+================================================== 16. WHATSAPP ENQUIRY
 ====================
 
 This is extremely important.
@@ -520,8 +505,7 @@ Floating button should have:
 • tooltip:
 “Chat with us”
 
-==================================================
-17. SHOPPING CART
+================================================== 17. SHOPPING CART
 =================
 
 Create a frontend shopping cart.
@@ -564,8 +548,7 @@ Total: ₹710
 
 Please confirm availability and delivery details.
 
-==================================================
-18. SEARCH
+================================================== 18. SEARCH
 ==========
 
 Add a functional product search.
@@ -581,8 +564,7 @@ Search examples:
 
 Create a premium search overlay on desktop/mobile.
 
-==================================================
-19. WISHLIST
+================================================== 19. WISHLIST
 ============
 
 Add wishlist functionality.
@@ -593,8 +575,7 @@ Saved products should appear in a wishlist drawer/page.
 
 Use localStorage so wishlist remains after refresh.
 
-==================================================
-20. SERVICES SECTION
+================================================== 20. SERVICES SECTION
 ====================
 
 Title:
@@ -643,8 +624,7 @@ Cards should have:
 • soft shadows
 • hover animations
 
-==================================================
-21. WHY CHOOSE US
+================================================== 21. WHY CHOOSE US
 =================
 
 Create a premium dark-green section.
@@ -688,8 +668,7 @@ Use elegant icons:
 
 Add subtle 3D depth.
 
-==================================================
-22. GALLERY
+================================================== 22. GALLERY
 ===========
 
 Create a premium Gallery section.
@@ -731,8 +710,7 @@ Our Journey
 
 Do not use random unrelated stock images in the final gallery.
 
-==================================================
-23. LOCATION / CONTACT SECTION
+================================================== 23. LOCATION / CONTACT SECTION
 ==============================
 
 Create a premium contact section.
@@ -769,8 +747,7 @@ GET DIRECTIONS
 
 Embed a map/location area using the address.
 
-==================================================
-24. SOCIAL MEDIA
+================================================== 24. SOCIAL MEDIA
 ================
 
 Add premium social icons.
@@ -785,8 +762,7 @@ Social links should open in a new tab.
 
 Create beautiful hover effects.
 
-==================================================
-25. FOOTER
+================================================== 25. FOOTER
 ==========
 
 Create a thick premium dark emerald footer.
@@ -836,8 +812,7 @@ Bottom:
 
 © 2026 Amma’s Organic Products. All Rights Reserved.
 
-==================================================
-26. 3D DESIGN SYSTEM
+================================================== 26. 3D DESIGN SYSTEM
 ====================
 
 Use premium 3D styling throughout.
@@ -868,8 +843,7 @@ rather than:
 
 “Gaming website.”
 
-==================================================
-27. ANIMATIONS
+================================================== 27. ANIMATIONS
 ==============
 
 Use smooth animations with Framer Motion.
@@ -909,8 +883,7 @@ Smooth shrinking/sticky effect
 
 Keep animation performance optimized.
 
-==================================================
-28. RESPONSIVE DESIGN
+================================================== 28. RESPONSIVE DESIGN
 =====================
 
 The website must be fully responsive.
@@ -944,8 +917,7 @@ IMPORTANT MOBILE REQUIREMENTS:
 • Buttons must be easy to tap
 • Typography must scale properly
 
-==================================================
-29. TECH STACK
+================================================== 29. TECH STACK
 ==============
 
 Use:
@@ -983,8 +955,7 @@ products.ts
 
 Use clean TypeScript interfaces for products.
 
-==================================================
-30. PRODUCT DATA ARCHITECTURE
+================================================== 30. PRODUCT DATA ARCHITECTURE
 =============================
 
 Create a centralized product data file.
@@ -1015,8 +986,7 @@ image: "/images/products/banana-powder.jpg"
 
 This will make future backend integration easy.
 
-==================================================
-31. IMAGE ARCHITECTURE
+================================================== 31. IMAGE ARCHITECTURE
 ======================
 
 Create organized image folders:
@@ -1036,8 +1006,7 @@ Use image paths from these folders.
 
 Make it extremely easy for me to replace images later.
 
-==================================================
-32. PREMIUM UI DETAILS
+================================================== 32. PREMIUM UI DETAILS
 ======================
 
 Add small details that make the website feel expensive:
@@ -1064,8 +1033,7 @@ Avoid:
 ❌ oversized cards
 ❌ cluttered layouts
 
-==================================================
-33. CTA SECTION
+================================================== 33. CTA SECTION
 ===============
 
 Near the bottom create a strong CTA:
@@ -1083,8 +1051,7 @@ CHAT ON WHATSAPP
 
 Use a beautiful dark green background with floating botanical elements.
 
-==================================================
-34. FINAL QUALITY REQUIREMENTS
+================================================== 34. FINAL QUALITY REQUIREMENTS
 ==============================
 
 The final website should feel:

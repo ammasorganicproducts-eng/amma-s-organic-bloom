@@ -1,28 +1,15 @@
 import { useEffect, useMemo, useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
-import { Link } from "@tanstack/react-router";
+import { Link } from "react-router-dom";
 import { ArrowRight, ChevronLeft, ChevronRight, X } from "lucide-react";
 import { SectionHeading } from "@/components/Reveal";
-import g1 from "@/assets/gallery/g1.png.asset.json";
-import g2 from "@/assets/gallery/g2.png.asset.json";
-import g3 from "@/assets/gallery/g3.png.asset.json";
-import g4 from "@/assets/gallery/g4.png.asset.json";
-import aboutImage from "@/assets/about.jpg";
-import moringa from "@/assets/products/moringa-powder.jpg";
-import ubtan from "@/assets/products/ubtan-soap.jpg";
-import candles from "@/assets/products/perfumed-candles.jpg";
+import g1 from "@/assets/gallery/g1.png";
+import g2 from "@/assets/gallery/g2.png";
+import g3 from "@/assets/gallery/g3.png";
+import g4 from "@/assets/gallery/g4.png";
 
-/**
- * GALLERY SLOTS — easy to update.
- * Replace `src` with your own photo (drop it in src/assets/gallery/ and import it),
- * then edit the title and category. Add or remove entries freely.
- */
 export type GalleryCategory =
-  | "Our Journey"
-  | "Products"
-  | "Behind the Scenes"
-  | "Natural Ingredients"
-  | "Packaging";
+  "Our Journey" | "Products" | "Behind the Scenes" | "Natural Ingredients" | "Packaging";
 
 export interface GalleryItem {
   src: string;
@@ -31,14 +18,10 @@ export interface GalleryItem {
 }
 
 export const GALLERY_ITEMS: GalleryItem[] = [
-  { src: g1.url, title: "At our stall", category: "Our Journey" },
-  { src: moringa, title: "Freshly ground moringa", category: "Products" },
-  { src: g2.url, title: "Meeting our customers", category: "Our Journey" },
-  { src: aboutImage, title: "Morning preparation", category: "Behind the Scenes" },
-  { src: g3.url, title: "Our product display", category: "Our Journey" },
-  { src: ubtan, title: "Handmade ubtan bars", category: "Products" },
-  { src: g4.url, title: "Sharing what we make", category: "Our Journey" },
-  { src: candles, title: "Hand-poured candles", category: "Packaging" },
+  { src: g1, title: "At our stall", category: "Our Journey" },
+  { src: g2, title: "Meeting our customers", category: "Our Journey" },
+  { src: g3, title: "Our product display", category: "Our Journey" },
+  { src: g4, title: "Sharing what we make", category: "Our Journey" },
 ];
 
 export function Gallery({
@@ -52,7 +35,8 @@ export function Gallery({
   const [index, setIndex] = useState<number | null>(null);
 
   const items = useMemo(() => {
-    const base = filter === "All" ? GALLERY_ITEMS : GALLERY_ITEMS.filter((i) => i.category === filter);
+    const base =
+      filter === "All" ? GALLERY_ITEMS : GALLERY_ITEMS.filter((i) => i.category === filter);
     return preview ? base.slice(0, 6) : base;
   }, [filter, preview]);
 

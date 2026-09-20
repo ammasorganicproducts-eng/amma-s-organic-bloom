@@ -123,9 +123,7 @@ export function ShopProvider({ children }: { children: ReactNode }) {
     clearCart: () => setCart([]),
     toggleWishlist,
     isWishlisted: (id: string) => wishlist.includes(id),
-    wishlistProducts: wishlist
-      .map((id) => getProduct(id))
-      .filter((p): p is Product => Boolean(p)),
+    wishlistProducts: wishlist.map((id) => getProduct(id)).filter((p): p is Product => Boolean(p)),
     drawer,
     openDrawer: setDrawer,
     closeDrawer: () => setDrawer(null),

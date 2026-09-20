@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
-import { Link, useRouterState } from "@tanstack/react-router";
+import { Link, useLocation } from "react-router-dom";
 import { Heart, Menu, MessageCircle, Search, ShoppingBag, X } from "lucide-react";
 import { Logo } from "@/components/Logo";
 import { useShop } from "@/store/shop";
@@ -20,7 +20,8 @@ export function Navbar() {
   const [scrolled, setScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
   const { cartCount, wishlist, openDrawer } = useShop();
-  const pathname = useRouterState({ select: (s) => s.location.pathname });
+  const location = useLocation();
+  const pathname = location.pathname;
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 40);
@@ -58,17 +59,22 @@ export function Navbar() {
           <Logo compact={scrolled} />
 
           <nav className="hidden items-center justify-center gap-1 lg:flex">
-            {NAV_LINKS.map((link) => (
-              <Link
-                key={link.to}
-                to={link.to}
-                activeOptions={{ exact: link.to === "/" }}
-                activeProps={{ className: "!text-primary after:!scale-x-100" }}
-                className="relative rounded-full px-3 py-2 text-[0.8rem] font-normal tracking-wide text-foreground/80 transition-colors hover:text-primary after:absolute after:inset-x-3 after:bottom-1 after:h-px after:origin-right after:scale-x-0 after:bg-gold after:transition-transform after:duration-300 hover:after:origin-left hover:after:scale-x-100"
-              >
-                {link.label}
-              </Link>
-            ))}
+            {NAV_LINKS.map((link) => {
+              const isActive = link.to === "/" ? pathname === "/" : pathname.startsWith(link.to);
+              return (
+                <Link
+                  key={link.to}
+                  to={link.to}
+                  className={`relative rounded-full px-3 py-2 text-[0.8rem] font-normal tracking-wide transition-colors after:absolute after:inset-x-3 after:bottom-1 after:h-px after:origin-right after:bg-gold after:transition-transform after:duration-300 hover:after:origin-left hover:after:scale-x-100 ${
+                    isActive
+                      ? "!text-primary after:!scale-x-100 font-medium"
+                      : "text-foreground/80 hover:text-primary after:scale-x-0"
+                  }`}
+                >
+                  {link.label}
+                </Link>
+              );
+            })}
           </nav>
 
           <div className="flex items-center gap-1 md:gap-1.5">
@@ -150,24 +156,28 @@ export function Navbar() {
               </div>
 
               <nav className="mt-8 flex flex-col gap-1">
-                {NAV_LINKS.map((link, i) => (
-                  <motion.div
-                    key={link.to}
-                    initial={{ opacity: 0, x: 24 }}
-                    animate={{ opacity: 1, x: 0 }}
-                    transition={{ delay: 0.06 * i + 0.1, duration: 0.45 }}
-                  >
-                    <Link
-                      to={link.to}
-                      activeOptions={{ exact: link.to === "/" }}
-                      activeProps={{ className: "!text-gold" }}
-                      onClick={() => setMenuOpen(false)}
-                      className="block border-b border-gold/15 py-3 font-display text-2xl text-cream/95"
+                {NAV_LINKS.map((link, i) => {
+                  const isActive =
+                    link.to === "/" ? pathname === "/" : pathname.startsWith(link.to);
+                  return (
+                    <motion.div
+                      key={link.to}
+                      initial={{ opacity: 0, x: 24 }}
+                      animate={{ opacity: 1, x: 0 }}
+                      transition={{ delay: 0.06 * i + 0.1, duration: 0.45 }}
                     >
-                      {link.label}
-                    </Link>
-                  </motion.div>
-                ))}
+                      <Link
+                        to={link.to}
+                        onClick={() => setMenuOpen(false)}
+                        className={`block border-b border-gold/15 py-3 font-display text-2xl transition-colors ${
+                          isActive ? "!text-gold" : "text-cream/95"
+                        }`}
+                      >
+                        {link.label}
+                      </Link>
+                    </motion.div>
+                  );
+                })}
               </nav>
 
               <div className="mt-auto flex flex-col gap-3 pt-8">

@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { Link } from "@tanstack/react-router";
+import { Link } from "react-router-dom";
 import { Leaf, MessageCircle } from "lucide-react";
 import { Reveal } from "@/components/Reveal";
 import { generalEnquiry, waLink } from "@/lib/brand";
@@ -27,8 +27,7 @@ export function CallToAction() {
       <div className="relative mx-auto max-w-3xl px-5 text-center md:px-10">
         <Reveal>
           <h2 className="font-display text-[2.1rem] leading-tight text-cream sm:text-5xl">
-            Bring Natural Goodness{" "}
-            <span className="text-gold-gradient italic">Home.</span>
+            Bring Natural Goodness <span className="text-gold-gradient italic">Home.</span>
           </h2>
           <p className="mx-auto mt-6 max-w-xl text-sm leading-relaxed text-cream/70 md:text-base">
             Explore our homemade organic products and discover simple, natural choices for everyday

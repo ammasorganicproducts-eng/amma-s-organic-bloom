@@ -1,6 +1,6 @@
 import { useMemo, useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
-import { Link } from "@tanstack/react-router";
+import { Link } from "react-router-dom";
 import { ArrowRight, MessageCircle, Search, ShoppingBag, X } from "lucide-react";
 import { CATEGORIES, products, type Category, type Product } from "@/data/products";
 import { ProductCard } from "@/components/ProductCard";
@@ -16,7 +16,11 @@ const SORTS: Array<{ value: Sort; label: string }> = [
   { value: "name", label: "Name: A – Z" },
 ];
 
-export function ProductsExplorer({ initialCategory = "All" }: { initialCategory?: "All" | Category }) {
+export function ProductsExplorer({
+  initialCategory = "All",
+}: {
+  initialCategory?: "All" | Category;
+}) {
   const [active, setActive] = useState<"All" | Category>(initialCategory);
   const [query, setQuery] = useState("");
   const [sort, setSort] = useState<Sort>("featured");
@@ -180,8 +184,7 @@ export function ProductsExplorer({ initialCategory = "All" }: { initialCategory?
                     <MessageCircle size={14} strokeWidth={1.6} /> Enquire on WhatsApp
                   </a>
                   <Link
-                    to="/products/$productId"
-                    params={{ productId: quickView.id }}
+                    to={`/products/${quickView.id}`}
                     onClick={() => setQuickView(null)}
                     className="btn-base btn-outline-gold w-full text-primary"
                   >

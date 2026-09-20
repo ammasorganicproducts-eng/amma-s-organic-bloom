@@ -25,10 +25,7 @@ const REASONS = [
 
 export function WhyChooseUs() {
   return (
-    <section
-      id="why-us"
-      className="emerald-surface grain section-pad relative overflow-hidden"
-    >
+    <section id="why-us" className="emerald-surface grain section-pad relative overflow-hidden">
       <div
         className="pointer-events-none absolute -left-24 top-10 h-72 w-72 rounded-full opacity-25 blur-3xl"
         style={{ background: "radial-gradient(circle, var(--gold), transparent 70%)" }}

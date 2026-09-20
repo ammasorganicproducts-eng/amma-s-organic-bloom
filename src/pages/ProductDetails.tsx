@@ -1,5 +1,5 @@
-import { useState } from "react";
-import { createFileRoute, Link, notFound } from "@tanstack/react-router";
+import { useEffect, useState } from "react";
+import { Link, useParams } from "react-router-dom";
 import { motion } from "framer-motion";
 import { ArrowLeft, Check, Heart, MessageCircle, ShoppingBag } from "lucide-react";
 import { getProduct, products } from "@/data/products";
@@ -8,42 +8,27 @@ import { formatPrice, productEnquiry, waLink } from "@/lib/brand";
 import { useShop } from "@/store/shop";
 import { ProductCard } from "@/components/ProductCard";
 import { SectionHeading } from "@/components/Reveal";
+import NotFound from "@/pages/NotFound";
 
-export const Route = createFileRoute("/products/$productId")({
-  loader: ({ params }) => {
-    const product = getProduct(params.productId);
-    if (!product) throw notFound();
-    return { product };
-  },
-  head: ({ loaderData }) => {
-    const product = loaderData?.product;
-    const title = product
-      ? `${product.name} | Amma's Organic Products`
-      : "Product | Amma's Organic Products";
-    const description = product
-      ? `${product.description} ${
-          product.price === null ? "Enquire for price on WhatsApp." : `Priced at ₹${product.price}.`
-        }`
-      : "Homemade organic products from Amma's Organic Products.";
-    return {
-      meta: [
-        { title },
-        { name: "description", content: description },
-        { property: "og:title", content: title },
-        { property: "og:description", content: description },
-        { property: "og:type", content: "website" },
-        { name: "twitter:card", content: "summary_large_image" },
-      ],
-    };
-  },
-  component: ProductDetailsPage,
-});
+export default function ProductDetails() {
+  const { productId } = useParams<{ productId: string }>();
+  const product = productId ? getProduct(productId) : undefined;
 
-function ProductDetailsPage() {
-  const { product } = Route.useLoaderData();
-  const detail = productDetail(product);
   const { addToCart, toggleWishlist, isWishlisted } = useShop();
   const [added, setAdded] = useState(false);
+  const [activeThumb, setActiveThumb] = useState(0);
+
+  useEffect(() => {
+    if (product) {
+      document.title = `${product.name} | Amma's Organic Products`;
+    }
+  }, [product]);
+
+  if (!product) {
+    return <NotFound />;
+  }
+
+  const detail = productDetail(product);
   const wished = isWishlisted(product.id);
 
   const related = products
@@ -51,7 +36,6 @@ function ProductDetailsPage() {
     .slice(0, 4);
 
   const thumbs = [product.image, product.image, product.image];
-  const [activeThumb, setActiveThumb] = useState(0);
 
   return (
     <>

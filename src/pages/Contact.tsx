@@ -1,31 +1,16 @@
-import { useState } from "react";
-import { createFileRoute } from "@tanstack/react-router";
+import { useEffect, useState } from "react";
 import { MessageCircle, Send } from "lucide-react";
 import { PageHeader } from "@/components/PageHeader";
-import { Contact } from "@/components/Contact";
+import { Contact as ContactSection } from "@/components/Contact";
 import { Reveal, SectionHeading } from "@/components/Reveal";
 import { BRAND, waLink } from "@/lib/brand";
 
-const title = "Contact Amma's Organic Products | Vijayawada";
-const description =
-  "Call, WhatsApp, email or visit Amma's Organic Products in Bhavanipuram, Vijayawada. Open Mon–Sun, 7:00 AM – 10:00 PM.";
-
-export const Route = createFileRoute("/contact")({
-  head: () => ({
-    meta: [
-      { title },
-      { name: "description", content: description },
-      { property: "og:title", content: title },
-      { property: "og:description", content: description },
-      { property: "og:type", content: "website" },
-      { name: "twitter:card", content: "summary_large_image" },
-    ],
-  }),
-  component: ContactPage,
-});
-
-function ContactPage() {
+export default function Contact() {
   const [form, setForm] = useState({ name: "", phone: "", message: "" });
+
+  useEffect(() => {
+    document.title = "Contact Amma's Organic Products | Vijayawada";
+  }, []);
 
   const message = `Hello ${BRAND.name}, my name is ${form.name || "—"} (${
     form.phone || "phone not shared"
@@ -39,7 +24,7 @@ function ContactPage() {
         subtitle="Come by the store, call us, or send a message on WhatsApp — we're happy to help."
       />
 
-      <Contact />
+      <ContactSection />
 
       <section className="section-pad bg-background">
         <div className="mx-auto max-w-[760px] px-5 md:px-10">

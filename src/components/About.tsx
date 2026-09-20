@@ -50,8 +50,8 @@ export function About() {
                 homemade and carefully prepared products for everyday wellness and personal care.
               </p>
               <p>
-                We offer a range of organic powders, healthy food products, natural juices,
-                handmade soaps and other natural products — each one prepared with care.
+                We offer a range of organic powders, healthy food products, natural juices, handmade
+                soaps and other natural products — each one prepared with care.
               </p>
               <p>
                 Our aim is simple: to bring quality, traditional goodness and natural choices to
