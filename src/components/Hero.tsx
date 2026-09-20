@@ -95,7 +95,7 @@ export function Hero() {
             transition={{ duration: 0.85, delay: 0.08, ease: [0.22, 1, 0.36, 1] }}
             className="flex flex-col items-center"
           >
-            <div className="hero-logo-shell grid h-[136px] w-[136px] shrink-0 place-items-center rounded-full sm:h-[156px] sm:w-[156px] md:h-[180px] md:w-[180px] lg:h-[208px] lg:w-[208px] 2xl:h-[232px] 2xl:w-[232px]">
+            <div className="hero-logo-shell grid h-[148px] w-[148px] shrink-0 place-items-center rounded-full sm:h-[164px] sm:w-[164px] md:h-[188px] md:w-[188px] lg:h-[216px] lg:w-[216px] 2xl:h-[248px] 2xl:w-[248px]">
               <img
                 src={ammaLogo}
                 alt="Amma's Organic Products"
