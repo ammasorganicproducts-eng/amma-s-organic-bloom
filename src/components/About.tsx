@@ -4,7 +4,7 @@ import { Reveal } from "@/components/Reveal";
 
 export function About() {
   return (
-    <section id="about" className="section-pad relative overflow-hidden bg-cream">
+    <section id="about" className="about-section section-pad relative overflow-hidden bg-cream">
       <div className="mx-auto grid max-w-[1200px] items-center gap-12 px-5 md:px-10 lg:grid-cols-2 lg:gap-16">
         <Reveal className="order-1">
           <div className="relative">
@@ -37,14 +37,14 @@ export function About() {
         <div className="order-2">
           <Reveal>
             <span className="eyebrow text-gold">Our Story</span>
-            <h2 className="mt-3 font-display text-[2rem] leading-tight text-primary sm:text-4xl lg:text-[2.8rem]">
+            <h2 className="about-section-title mt-3 font-display text-[2.15rem] leading-tight text-primary sm:text-[2.65rem] lg:text-[3rem]">
               About Amma&apos;s Organic Products
             </h2>
             <span className="gold-line mt-5 block h-px w-24" aria-hidden />
           </Reveal>
 
           <Reveal delay={0.12}>
-            <div className="mt-7 space-y-5 text-sm leading-[1.9] text-foreground/75 md:text-[0.95rem]">
+            <div className="about-section-description mt-7 space-y-5 text-[1.05rem] font-medium leading-[1.9] text-foreground/75 md:text-[1.1rem]">
               <p>
                 Amma&apos;s Organic Products is a small homegrown business offering natural,
                 homemade and carefully prepared products for everyday wellness and personal care.
@@ -61,7 +61,7 @@ export function About() {
           </Reveal>
 
           <Reveal delay={0.2}>
-            <p className="mt-8 border-l-2 border-gold pl-5 font-display text-xl italic leading-relaxed text-primary md:text-2xl">
+            <p className="about-section-quote mt-8 border-l-2 border-gold pl-5 font-display text-[1.35rem] font-semibold italic leading-relaxed text-primary md:text-[1.6rem]">
               Choose Natural. Choose Healthy. Choose Amma&apos;s Organic Products.
             </p>
           </Reveal>

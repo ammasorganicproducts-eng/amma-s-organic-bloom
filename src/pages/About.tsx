@@ -57,6 +57,7 @@ export default function About() {
   return (
     <>
       <PageHeader
+        className="about-page-header"
         eyebrow="Our Story"
         title="About Amma's Organic Products"
         subtitle="A small homegrown business offering natural, homemade and carefully prepared products for everyday wellness and personal care."
@@ -64,7 +65,7 @@ export default function About() {
 
       <AboutSection />
 
-      <section className="section-pad bg-background">
+      <section className="about-values-section section-pad bg-background">
         <div className="mx-auto max-w-[1200px] px-5 md:px-10">
           <SectionHeading eyebrow="What Guides Us" title="Mission, Vision & Values" />
           <div className="mt-12 grid gap-5 md:grid-cols-3">
@@ -72,9 +73,11 @@ export default function About() {
               <Reveal key={pillar.title} delay={i * 0.1}>
                 <article className="card-3d h-full rounded-3xl border border-gold/20 bg-ivory p-8">
                   <Leaf size={26} strokeWidth={1.2} className="text-gold" />
-                  <h3 className="mt-5 font-display text-2xl text-primary">{pillar.title}</h3>
+                  <h3 className="mt-5 font-display text-[1.6rem] font-semibold text-primary">
+                    {pillar.title}
+                  </h3>
                   <span className="gold-line mt-4 block h-px w-12" aria-hidden />
-                  <p className="mt-4 text-sm leading-relaxed text-muted-foreground">
+                  <p className="mt-4 text-[1.05rem] font-medium leading-relaxed text-muted-foreground">
                     {pillar.text}
                   </p>
                 </article>
@@ -95,9 +98,9 @@ export default function About() {
             {PROCESS.map((item, i) => (
               <Reveal key={item.step} delay={i * 0.08}>
                 <article className="h-full rounded-2xl border border-border bg-ivory p-6">
-                  <span className="font-display text-3xl text-gold">{item.step}</span>
-                  <h3 className="mt-3 font-display text-xl text-primary">{item.title}</h3>
-                  <p className="mt-2 text-sm leading-relaxed text-muted-foreground">{item.text}</p>
+                  <span className="font-display text-[2rem] font-semibold text-gold">{item.step}</span>
+                  <h3 className="mt-3 font-display text-[1.3rem] font-semibold text-primary">{item.title}</h3>
+                  <p className="mt-2 text-[1.05rem] font-medium leading-relaxed text-muted-foreground">{item.text}</p>
                 </article>
               </Reveal>
             ))}

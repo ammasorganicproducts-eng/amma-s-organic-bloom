@@ -4,13 +4,17 @@ export function PageHeader({
   eyebrow,
   title,
   subtitle,
+  className = "",
 }: {
   eyebrow: string;
   title: string;
   subtitle?: string;
+  className?: string;
 }) {
   return (
-    <header className="emerald-surface grain relative overflow-hidden px-5 pb-16 pt-32 md:px-10 md:pb-20 md:pt-40">
+    <header
+      className={`emerald-surface grain relative overflow-hidden px-5 pb-16 pt-32 md:px-10 md:pb-20 md:pt-40 ${className}`}
+    >
       <div
         className="pointer-events-none absolute -right-24 -top-16 h-72 w-72 rounded-full opacity-25 blur-3xl"
         style={{ background: "radial-gradient(circle, var(--gold), transparent 70%)" }}

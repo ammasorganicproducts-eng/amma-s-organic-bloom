@@ -23,6 +23,7 @@ export default function Products() {
   return (
     <>
       <PageHeader
+        className="products-page-header"
         eyebrow="Shop"
         title="Our Natural Collection"
         subtitle="Simple ingredients. Thoughtful preparation. Natural choices."
