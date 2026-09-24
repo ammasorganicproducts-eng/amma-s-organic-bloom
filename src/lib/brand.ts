@@ -23,6 +23,7 @@ export const mapEmbedUrl = `https://www.google.com/maps?q=${encodeURIComponent(
 )}&output=embed`;
 
 export const formatPrice = (price: number) => `₹${price.toLocaleString("en-IN")}`;
+export const SHIPPING_MESSAGE = "Shipping charges added";
 
 export const waLink = (message: string) =>
   `https://wa.me/${BRAND.whatsapp}?text=${encodeURIComponent(message)}`;

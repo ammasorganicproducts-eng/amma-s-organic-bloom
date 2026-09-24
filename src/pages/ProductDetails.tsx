@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 import { ArrowLeft, Check, Heart, MessageCircle, ShoppingBag } from "lucide-react";
 import { getProduct, products } from "@/data/products";
 import { productDetail } from "@/lib/product-details";
-import { formatPrice, productEnquiry, waLink } from "@/lib/brand";
+import { formatPrice, productEnquiry, SHIPPING_MESSAGE, waLink } from "@/lib/brand";
 import { useShop } from "@/store/shop";
 import { ProductCard } from "@/components/ProductCard";
 import { SectionHeading } from "@/components/Reveal";
@@ -107,6 +107,7 @@ export default function ProductDetails() {
                   formatPrice(product.price)
                 )}
               </p>
+              <p className="mt-1 text-xs text-muted-foreground">{SHIPPING_MESSAGE}</p>
 
               <div className="mt-8 flex flex-col gap-3 sm:flex-row">
                 {product.price !== null && (

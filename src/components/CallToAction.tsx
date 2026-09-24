@@ -6,7 +6,7 @@ import { generalEnquiry, waLink } from "@/lib/brand";
 
 export function CallToAction() {
   return (
-    <section className="emerald-surface grain section-pad relative overflow-hidden">
+    <section className="emerald-surface grain homepage-section-pad relative overflow-hidden">
       {[
         { left: "8%", top: "18%", size: 34, dur: 9 },
         { left: "26%", top: "70%", size: 22, dur: 12 },

@@ -44,7 +44,7 @@ export function SectionHeading({
     >
       {eyebrow && <span className="eyebrow text-gold">{eyebrow}</span>}
       <h2
-        className={`mt-3 font-display text-[2rem] leading-tight sm:text-4xl lg:text-[2.9rem] ${
+        className={`mt-3 font-display text-[2.25rem] font-semibold leading-tight sm:text-[2.75rem] lg:text-[3.25rem] ${
           light ? "text-cream" : "text-primary"
         }`}
       >
@@ -56,7 +56,7 @@ export function SectionHeading({
       />
       {subtitle && (
         <p
-          className={`mt-5 max-w-2xl text-sm leading-relaxed md:text-[0.95rem] ${
+          className={`mt-5 max-w-2xl text-[1rem] font-medium leading-relaxed md:text-[1.08rem] ${
             light ? "text-cream/70" : "text-muted-foreground"
           }`}
         >

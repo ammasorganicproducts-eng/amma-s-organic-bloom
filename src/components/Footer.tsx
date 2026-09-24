@@ -97,7 +97,7 @@ export function Footer() {
             <ul className="mt-5 space-y-2.5 text-sm text-cream/70">
               <li>
                 <a href={`tel:${BRAND.phoneTel}`} className="transition-colors hover:text-gold">
-                  {BRAND.phoneDisplay}
+                  +91 {BRAND.phoneDisplay}
                 </a>
               </li>
               <li>

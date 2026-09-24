@@ -3,7 +3,7 @@ import { AnimatePresence, motion } from "framer-motion";
 import { Search, ShoppingBag, X } from "lucide-react";
 import { products } from "@/data/products";
 import { useShop } from "@/store/shop";
-import { formatPrice, productEnquiry, waLink } from "@/lib/brand";
+import { formatPrice, productEnquiry, SHIPPING_MESSAGE, waLink } from "@/lib/brand";
 
 export function SearchOverlay() {
   const { drawer, closeDrawer, addToCart } = useShop();
@@ -107,6 +107,7 @@ export function SearchOverlay() {
                             {p.weight ? ` · ${p.weight}` : ""} ·{" "}
                             {p.price === null ? "Enquire for Price" : formatPrice(p.price)}
                           </p>
+                          <p className="text-[0.62rem] text-muted-foreground">{SHIPPING_MESSAGE}</p>
                         </div>
                         {p.price !== null ? (
                           <button

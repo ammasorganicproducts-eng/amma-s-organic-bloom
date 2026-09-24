@@ -1,7 +1,7 @@
 import { AnimatePresence, motion } from "framer-motion";
 import { Minus, Plus, ShoppingBag, Trash2, X } from "lucide-react";
 import { useShop } from "@/store/shop";
-import { formatPrice, orderMessage, waLink } from "@/lib/brand";
+import { formatPrice, orderMessage, SHIPPING_MESSAGE, waLink } from "@/lib/brand";
 
 export function CartDrawer() {
   const { drawer, closeDrawer, cartLines, cartTotal, setQty, removeFromCart } = useShop();
@@ -97,6 +97,9 @@ export function CartDrawer() {
                       <div className="flex shrink-0 flex-col items-end gap-2">
                         <span className="font-display text-lg text-primary">
                           {product.price === null ? "—" : formatPrice(product.price * qty)}
+                        </span>
+                        <span className="text-right text-[0.6rem] text-muted-foreground">
+                          {SHIPPING_MESSAGE}
                         </span>
                         <button
                           type="button"

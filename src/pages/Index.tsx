@@ -1,11 +1,12 @@
 import { useEffect } from "react";
 import { Hero } from "@/components/Hero";
+import { HighlightMarquee } from "@/components/HighlightMarquee";
 import { TrustIntro } from "@/components/TrustIntro";
 import { FeaturedCategories } from "@/components/FeaturedCategories";
 import { BestSellers } from "@/components/BestSellers";
 import { WhyShopPreview } from "@/components/WhyShopPreview";
 import { ReviewsPreview } from "@/components/ReviewsPreview";
-import { Gallery } from "@/components/Gallery";
+import { HomepageVideos } from "@/components/HomepageVideos";
 import { CallToAction } from "@/components/CallToAction";
 
 export default function Index() {
@@ -16,12 +17,13 @@ export default function Index() {
   return (
     <>
       <Hero />
+      <HighlightMarquee />
       <TrustIntro />
       <FeaturedCategories />
       <BestSellers />
       <WhyShopPreview />
       <ReviewsPreview />
-      <Gallery preview />
+      <HomepageVideos />
       <CallToAction />
     </>
   );

@@ -4,7 +4,7 @@ import { reviews } from "@/data/reviews";
 
 export function ReviewsPreview() {
   return (
-    <section className="section-pad bg-cream">
+    <section className="homepage-section-pad bg-cream">
       <div className="mx-auto max-w-[1200px] px-5 md:px-10">
         <SectionHeading
           eyebrow="Kind Words"

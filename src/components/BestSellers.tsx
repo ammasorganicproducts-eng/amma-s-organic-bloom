@@ -21,7 +21,7 @@ export function BestSellers() {
   );
 
   return (
-    <section className="section-pad bg-background">
+    <section className="homepage-section-pad bg-background">
       <div className="mx-auto max-w-[1300px] px-5 md:px-10">
         <SectionHeading
           eyebrow="Most Loved"

@@ -15,10 +15,10 @@ export function Logo({ compact = false }: { compact?: boolean }) {
         }`}
       />
       <span className="flex min-w-0 flex-col leading-none">
-        <span className="truncate font-display text-[0.95rem] tracking-wide text-primary md:text-[1.05rem]">
+        <span className="header-brand-name truncate font-display tracking-wide text-primary">
           Amma&apos;s Organic
         </span>
-        <span className="eyebrow mt-1 truncate text-[0.52rem] text-gold md:text-[0.55rem]">
+        <span className="header-brand-tagline eyebrow mt-1 truncate text-gold">
           Pure · Natural · Healthy
         </span>
       </span>

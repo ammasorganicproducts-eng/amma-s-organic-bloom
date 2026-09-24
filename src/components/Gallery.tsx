@@ -7,6 +7,17 @@ import g1 from "@/assets/gallery/g1.png";
 import g2 from "@/assets/gallery/g2.png";
 import g3 from "@/assets/gallery/g3.png";
 import g4 from "@/assets/gallery/g4.png";
+import g5 from "@/assets/g5.jpeg";
+import g6 from "@/assets/g6.jpeg";
+import g7 from "@/assets/g7.jpeg";
+import g8 from "@/assets/g8.jpeg";
+import g9 from "@/assets/g9.jpeg";
+import g10 from "@/assets/g10.jpeg";
+import g11 from "@/assets/g11.jpeg";
+import g12 from "@/assets/g12.jpeg";
+import g13 from "@/assets/g13.jpeg";
+import g14 from "@/assets/g14.jpeg";
+import g15 from "@/assets/g15.jpeg";
 
 export type GalleryCategory =
   "Our Journey" | "Products" | "Behind the Scenes" | "Natural Ingredients" | "Packaging";
@@ -22,6 +33,17 @@ export const GALLERY_ITEMS: GalleryItem[] = [
   { src: g2, title: "Meeting our customers", category: "Our Journey" },
   { src: g3, title: "Our product display", category: "Our Journey" },
   { src: g4, title: "Sharing what we make", category: "Our Journey" },
+  { src: g5, title: "Our organic products", category: "Products" },
+  { src: g6, title: "Natural ingredients", category: "Natural Ingredients" },
+  { src: g7, title: "Made with care", category: "Behind the Scenes" },
+  { src: g8, title: "Thoughtful packaging", category: "Packaging" },
+  { src: g9, title: "From our kitchen", category: "Behind the Scenes" },
+  { src: g10, title: "Quality ingredients", category: "Natural Ingredients" },
+  { src: g11, title: "Ready to share", category: "Products" },
+  { src: g12, title: "Carefully prepared", category: "Behind the Scenes" },
+  { src: g13, title: "Our product range", category: "Products" },
+  { src: g14, title: "Packed with care", category: "Packaging" },
+  { src: g15, title: "A glimpse of our journey", category: "Our Journey" },
 ];
 
 export function Gallery({
@@ -125,7 +147,7 @@ export function Gallery({
         {preview && (
           <div className="mt-8 flex justify-center">
             <Link to="/gallery" className="btn-base btn-outline-gold text-primary">
-              View Gallery <ArrowRight size={14} strokeWidth={1.6} />
+              View Full Gallery <ArrowRight size={14} strokeWidth={1.6} />
             </Link>
           </div>
         )}

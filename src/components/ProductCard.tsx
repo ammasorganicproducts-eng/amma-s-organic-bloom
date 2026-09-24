@@ -3,7 +3,7 @@ import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 import { Check, Eye, Heart, MessageCircle, ShoppingBag } from "lucide-react";
 import type { Product } from "@/data/products";
-import { formatPrice, productEnquiry, waLink } from "@/lib/brand";
+import { formatPrice, productEnquiry, SHIPPING_MESSAGE, waLink } from "@/lib/brand";
 import { useShop } from "@/store/shop";
 
 export function ProductCard({
@@ -88,16 +88,16 @@ export function ProductCard({
 
         <div className="flex flex-1 flex-col p-4">
           <Link to={`/products/${product.id}`}>
-            <h3 className="font-display text-lg leading-snug text-primary transition-colors hover:text-gold">
+            <h3 className="font-display text-xl font-semibold leading-snug text-primary transition-colors hover:text-gold">
               {product.name}
             </h3>
           </Link>
           {product.weight && (
-            <p className="mt-1 text-[0.7rem] uppercase tracking-[0.18em] text-muted-foreground">
+            <p className="mt-1 text-[0.82rem] font-semibold uppercase tracking-[0.18em] text-muted-foreground">
               {product.weight}
             </p>
           )}
-          <p className="mt-2 line-clamp-2 text-xs leading-relaxed text-muted-foreground">
+          <p className="mt-2 line-clamp-2 text-[0.95rem] leading-relaxed text-muted-foreground">
             {product.description}
           </p>
 
@@ -105,11 +105,12 @@ export function ProductCard({
             {product.price === null ? (
               <span className="font-display text-base italic text-bark">Enquire for Price</span>
             ) : (
-              <span className="font-display text-2xl text-primary">
+              <span className="font-display text-[1.75rem] font-semibold text-primary">
                 {formatPrice(product.price)}
               </span>
             )}
           </div>
+          <p className="mt-1 text-[0.8rem] font-medium text-muted-foreground">{SHIPPING_MESSAGE}</p>
 
           <div className="mt-4 flex flex-col gap-2">
             {product.price !== null && (

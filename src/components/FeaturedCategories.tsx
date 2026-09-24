@@ -18,7 +18,7 @@ const CARDS: Array<{ category: Category; image: string; blurb: string }> = [
 
 export function FeaturedCategories() {
   return (
-    <section className="section-pad bg-cream">
+    <section className="homepage-section-pad bg-cream">
       <div className="mx-auto max-w-[1300px] px-5 md:px-10">
         <SectionHeading
           eyebrow="Shop by Category"

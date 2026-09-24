@@ -1,7 +1,7 @@
 import { AnimatePresence, motion } from "framer-motion";
 import { Heart, ShoppingBag, X } from "lucide-react";
 import { useShop } from "@/store/shop";
-import { formatPrice, productEnquiry, waLink } from "@/lib/brand";
+import { formatPrice, productEnquiry, SHIPPING_MESSAGE, waLink } from "@/lib/brand";
 
 export function WishlistDrawer() {
   const { drawer, closeDrawer, wishlistProducts, toggleWishlist, addToCart } = useShop();
@@ -70,6 +70,7 @@ export function WishlistDrawer() {
                       <p className="text-sm text-muted-foreground">
                         {product.price === null ? "Enquire for Price" : formatPrice(product.price)}
                       </p>
+                      <p className="text-[0.62rem] text-muted-foreground">{SHIPPING_MESSAGE}</p>
                       <div className="mt-2 flex flex-wrap gap-2">
                         {product.price !== null ? (
                           <button

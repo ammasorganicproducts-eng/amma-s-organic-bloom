@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 import { ArrowRight, MessageCircle, Search, ShoppingBag, X } from "lucide-react";
 import { CATEGORIES, products, type Category, type Product } from "@/data/products";
 import { ProductCard } from "@/components/ProductCard";
-import { formatPrice, productEnquiry, waLink } from "@/lib/brand";
+import { formatPrice, productEnquiry, SHIPPING_MESSAGE, waLink } from "@/lib/brand";
 import { useShop } from "@/store/shop";
 
 type Sort = "featured" | "price-asc" | "price-desc" | "name";
@@ -165,6 +165,7 @@ export function ProductsExplorer({
                     formatPrice(quickView.price)
                   )}
                 </p>
+                <p className="mt-1 text-xs text-muted-foreground">{SHIPPING_MESSAGE}</p>
                 <div className="mt-6 flex flex-col gap-2">
                   {quickView.price !== null && (
                     <button

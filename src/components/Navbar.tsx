@@ -65,7 +65,7 @@ export function Navbar() {
                 <Link
                   key={link.to}
                   to={link.to}
-                  className={`relative rounded-full px-3 py-2 text-[0.8rem] font-normal tracking-wide transition-colors after:absolute after:inset-x-3 after:bottom-1 after:h-px after:origin-right after:bg-gold after:transition-transform after:duration-300 hover:after:origin-left hover:after:scale-x-100 ${
+                  className={`nav-link-typography relative rounded-full px-3 py-2 text-[0.92rem] font-medium tracking-wide transition-colors after:absolute after:inset-x-3 after:bottom-1 after:h-px after:origin-right after:bg-gold after:transition-transform after:duration-300 hover:after:origin-left hover:after:scale-x-100 ${
                     isActive
                       ? "!text-primary after:!scale-x-100 font-medium"
                       : "text-foreground/80 hover:text-primary after:scale-x-0"

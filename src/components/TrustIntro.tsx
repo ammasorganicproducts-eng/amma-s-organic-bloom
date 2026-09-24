@@ -25,7 +25,7 @@ const CARDS = [
 
 export function TrustIntro() {
   return (
-    <section className="section-pad relative bg-background">
+    <section className="homepage-section-pad relative bg-background">
       <div className="mx-auto max-w-[1200px] px-5 md:px-10">
         <SectionHeading
           eyebrow="Our Promise"
@@ -40,9 +40,13 @@ export function TrustIntro() {
                 <span className="text-3xl" aria-hidden>
                   {card.icon}
                 </span>
-                <h3 className="mt-5 font-display text-2xl text-primary">{card.title}</h3>
+                <h3 className="mt-5 font-display text-[20px] font-semibold text-primary sm:text-[22px] lg:text-[25px]">
+                  {card.title}
+                </h3>
                 <span className="gold-line mt-3 block h-px w-10" aria-hidden />
-                <p className="mt-4 text-sm leading-relaxed text-muted-foreground">{card.text}</p>
+                <p className="mt-4 text-[15px] font-medium leading-relaxed text-muted-foreground sm:text-[16px] lg:text-[18px]">
+                  {card.text}
+                </p>
               </article>
             </Reveal>
           ))}

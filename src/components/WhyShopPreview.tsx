@@ -11,7 +11,7 @@ const POINTS = [
 
 export function WhyShopPreview() {
   return (
-    <section className="emerald-surface grain section-pad relative overflow-hidden">
+    <section className="emerald-surface grain homepage-section-pad relative overflow-hidden">
       <div className="relative mx-auto max-w-[1200px] px-5 md:px-10">
         <SectionHeading eyebrow="The Difference" title="Why Shop With Us" light />
 
