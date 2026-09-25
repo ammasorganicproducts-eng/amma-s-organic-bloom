@@ -50,7 +50,7 @@ export function Navbar() {
         className="fixed inset-x-0 top-0 z-50 px-3 pt-3 md:px-6 md:pt-4"
       >
         <div
-          className={`hero-nav mx-auto grid max-w-[1400px] grid-cols-[minmax(0,1fr)_auto] items-center gap-3 rounded-full transition-all duration-500 lg:grid-cols-[auto_1fr_auto] ${
+          className={`hero-nav mx-auto grid max-w-[1400px] grid-cols-[minmax(0,1fr)_auto] items-center gap-1 rounded-full transition-all duration-500 md:gap-3 lg:grid-cols-[auto_1fr_auto] ${
             scrolled
               ? "px-3 py-1.5 shadow-[0_12px_34px_oklch(0.29_0.062_158_/_0.13)] md:px-5"
               : "px-3 py-2.5 md:px-6"
@@ -77,7 +77,7 @@ export function Navbar() {
             })}
           </nav>
 
-          <div className="flex items-center gap-1 md:gap-1.5">
+          <div className="flex shrink-0 items-center gap-0.5 md:gap-1.5">
             <button
               type="button"
               aria-label="Search products"
@@ -99,7 +99,7 @@ export function Navbar() {
               type="button"
               aria-label="Open cart"
               onClick={() => openDrawer("cart")}
-              className="relative flex h-9 w-9 items-center justify-center rounded-full text-primary transition-colors hover:bg-gold/15"
+              className="relative flex h-8 w-8 items-center justify-center rounded-full text-primary transition-colors hover:bg-gold/15 md:h-9 md:w-9"
             >
               <ShoppingBag size={18} strokeWidth={1.5} />
               {cartCount > 0 && <Badge>{cartCount}</Badge>}
@@ -116,7 +116,7 @@ export function Navbar() {
               type="button"
               aria-label="Open menu"
               onClick={() => setMenuOpen(true)}
-              className="flex h-9 w-9 items-center justify-center rounded-full text-primary transition-colors hover:bg-gold/15 lg:hidden"
+              className="flex h-8 w-8 items-center justify-center rounded-full text-primary transition-colors hover:bg-gold/15 md:h-9 md:w-9 lg:hidden"
             >
               <Menu size={20} strokeWidth={1.5} />
             </button>

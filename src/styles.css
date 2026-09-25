@@ -530,6 +530,24 @@
   font-weight: 600;
 }
 
+@media (max-width: 767px) {
+  .header-brand-name {
+    font-size: 0.95rem;
+  }
+
+  .header-brand-tagline {
+    font-size: 0.56rem !important;
+    letter-spacing: 0.14em;
+  }
+}
+
+@media (max-width: 374px) {
+  .header-brand-tagline {
+    font-size: 0.5rem !important;
+    letter-spacing: 0.1em;
+  }
+}
+
 @media (min-width: 768px) {
   .header-brand-name {
     font-size: 1.375rem;
