@@ -84,7 +84,7 @@ export const products: Product[] = [
   powder(
     "carrot-powder",
     "Carrot Powder",
-    240,
+    95,
     carrotPowder,
     "Bright carrot powder, gently dried to keep its natural colour.",
   ),
@@ -126,7 +126,7 @@ export const products: Product[] = [
   powder(
     "amla-powder",
     "Amla Powder",
-    250,
+    95,
     amlaPowder,
     "Indian gooseberry powder, a household favourite for generations.",
   ),
